@@ -14,8 +14,8 @@ export const GachaInfo = () => {
       return;
     }
     const tomorrow = new Date(now).setHours(0, 0, 0, 0) + 86400000;
+    setTicket((ticket) => ticket + 3);
     setNextSignInReward(tomorrow);
-    setTicket((ticket) => ticket < 3 ? 3 : ticket);
   }, [nextSignInReward, setNextSignInReward, setTicket]);
   const hasMounted = useHasMounted();
   return (
